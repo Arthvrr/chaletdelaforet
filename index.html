@@ -11,7 +11,7 @@
   <meta property="og:title" content="Le Chalet de la Forêt — Brasserie &amp; Fumoir maison à Genappe">
   <meta property="og:description" content="Cuisine de brasserie, produits locaux et grand fumoir maison à 150 m de l'Abbaye de Villers-la-Ville.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="fb_images/batiment.jpg">
+  <meta property="og:image" content="internet_images/chalet-de-la-foret-large.png">
   <meta property="og:locale" content="fr_BE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
     "@type": "Restaurant",
     "name": "Le Chalet de la Forêt",
     "legalName": "Le Chalet SRL",
-    "image": "fb_images/batiment.jpg",
+    "image": "internet_images/chalet-de-la-foret-large.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rue de Chevelipont 6",
@@ -36,7 +36,12 @@
     "priceRange": "€€",
     "servesCuisine": ["Belgian", "French", "Brasserie"],
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:00", "closes": "23:30" }
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "23:30"
+      }
     ],
     "url": "https://www.chaletdelaforet.be/"
   }
@@ -95,7 +100,7 @@
     <!-- HERO -->
     <section class="hero" aria-label="Présentation du Chalet de la Forêt">
       <div class="media">
-        <img src="fb_images/batiment.jpg" alt="Façade en briques et terrasse du Chalet de la Forêt à Genappe" loading="eager" decoding="async">
+        <img src="internet_images/chalet-de-la-foret-large.png" alt="Vue extérieure du Chalet de la Forêt à Genappe" loading="eager" decoding="async">
       </div>
       <div class="overlay" aria-hidden="true"></div>
 
@@ -128,9 +133,15 @@
           <h2>Une histoire qui se partage à table</h2>
         </div>
 
-        <div class="grid-2">
-          <div class="media media--radius-l history-photo">
-            <img src="internet_images/chalet-de-la-foret.png" alt="Salle chaleureuse en briques et bois du Chalet de la Forêt" loading="lazy" decoding="async">
+        <div class="grid-2 history-grid">
+          <div class="history-gallery">
+            <figure class="media media--radius-l history-photo history-photo--main" data-lightbox="internet_images/chalet-de-la-foret.png" data-lightbox-title="Le Chalet de la Forêt — Façades et terrasse">
+              <img src="internet_images/chalet-de-la-foret.png" alt="Le Chalet de la Forêt à Genappe" loading="lazy" decoding="async">
+            </figure>
+            <figure class="media media--radius-m history-photo history-photo--winter" data-lightbox="internet_images/chalet-de-la-foret-neige.jpg" data-lightbox-title="Le Chalet de la Forêt sous la neige">
+              <img src="internet_images/chalet-de-la-foret-neige.jpg" alt="Le Chalet de la Forêt en hiver sous la neige" loading="lazy" decoding="async">
+              <figcaption class="photo-caption">Été comme hiver, une table chaleureuse</figcaption>
+            </figure>
           </div>
 
           <div class="timeline" aria-label="Frise historique du Chalet de la Forêt">
@@ -231,7 +242,7 @@
               <p>Des plats de saison renouvelés régulièrement pour mettre à l'honneur le marché et les envies du moment.</p>
               <div class="suggest-actions">
                 <button type="button" class="btn btn--outline btn--sm" data-lightbox="assets/suggestion-du-chef.png" data-lightbox-title="Suggestions du Chef — Le Chalet de la Forêt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Agrandir</button>
-                <a href="suggestions.html" class="btn btn--ghost">Voir la carte des boissons →</a>
+                <a href="suggestions.html" class="btn btn--ghost">Voir toutes les ardoises →</a>
               </div>
             </div>
           </article>
@@ -314,14 +325,14 @@
     <section class="section" id="reserver">
       <div class="container">
         <div class="reservation-hero">
-          <p class="eyebrow" style="color:#E3AC77;">Réservation</p>
+          <p class="eyebrow eyebrow--light">Réservation</p>
           <h2>Réserver une table</h2>
           <p>Votre demande est transmise directement à notre équipe. Une confirmation personnelle vous est renvoyée par e-mail.</p>
         </div>
 
         <div class="reservation-wrap">
           <div class="res-form" id="form-wrap">
-            <div style="margin-bottom: 1.35rem;">
+            <div class="res-form__status">
               <span class="status-pill js-open-status" data-status-format="long">
                 <span class="status-dot" aria-hidden="true"></span>
                 <span class="js-status-text">Vérification des horaires…</span>
@@ -431,6 +442,104 @@
         </div>
       </div>
     </section>
+
+    <!-- ABBAYE DE VILLERS -->
+    <section class="section section--alt" id="abbaye">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">À 150 mètres à pied</p>
+          <h2>L'Abbaye de Villers-la-Ville</h2>
+          <p class="lead">
+            Découvrez l'une des plus belles abbayes cisterciennes d'Europe juste à côté du Chalet — une balade incontournable avant ou après votre repas.
+          </p>
+        </div>
+
+        <div class="abbey-carousel-wrap" id="abbey-carousel" role="region" aria-roledescription="carousel" aria-label="Galerie de l'Abbaye de Villers-la-Ville">
+          <div class="abbey-carousel-track" id="abbey-carousel-track">
+            <img src="internet_images/abbaye-1.jpg" alt="Abbaye de Villers-la-Ville — vestiges cisterciens" class="active" data-lightbox="internet_images/abbaye-1.jpg" data-lightbox-title="Abbaye de Villers-la-Ville — À 150 m du Chalet" loading="lazy" decoding="async">
+            <img src="internet_images/abbaye-2.jpg" alt="Abbaye de Villers-la-Ville — arches et architecture" data-lightbox="internet_images/abbaye-2.jpeg" data-lightbox-title="Abbaye de Villers-la-Ville — Architecture cistercienne" loading="lazy" decoding="async">
+            <img src="internet_images/abbaye-3.jpg" alt="Abbaye de Villers-la-Ville — ruines et jardins" data-lightbox="internet_images/abbaye-3.jpg" data-lightbox-title="Abbaye de Villers-la-Ville — Jardins et ruines" loading="lazy" decoding="async">
+            <img src="internet_images/abbaye-4.jpg" alt="Abbaye de Villers-la-Ville — ruines et jardins" data-lightbox="internet_images/abbaye-4.jpg" data-lightbox-title="Abbaye de Villers-la-Ville — Jardins et ruines" loading="lazy" decoding="async">
+          </div>
+          </div>
+
+          <button type="button" class="carousel-btn carousel-btn--prev" aria-label="Image précédente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="carousel-btn carousel-btn--next" aria-label="Image suivante">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+
+          <div class="abbey-carousel-nav" role="tablist" aria-label="Choisir une photo de l'Abbaye">
+            <button type="button" role="tab" class="active" aria-selected="true" aria-label="Photo 1 sur 3"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAIL DU CHALET -->
+    <section class="section section--dark" id="trail">
+      <div class="container">
+        <div class="trail-layout">
+          <div class="trail-poster" data-lightbox="internet_images/trail-du-chalet.png" data-lightbox-title="Trail du Chalet de la Forêt — Édition 2027">
+            <img src="internet_images/trail-du-chalet.png" alt="Affiche officielle du Trail du Chalet de la Forêt" loading="lazy" decoding="async">
+          </div>
+
+          <div class="trail-content">
+            <p class="eyebrow">Rendez-vous sportif</p>
+            <h2>Trail du Chalet de la Forêt</h2>
+            <p class="lead">
+              Chaque année, le Chalet de la Forêt accueille le Trail du Chalet : une course nature conviviale à travers les bois et sentiers de Genappe et de Villers-la-Ville.
+            </p>
+            <p class="trail-sub">
+              Départ, arrivée et ravitaillement au pied du Chalet — l'occasion parfaite de prolonger l'effort autour d'un bon verre ou d'une planche en terrasse.
+            </p>
+            <div class="trail-actions">
+              <a href="https://www.betrail.run/race/trail.du.chalet.de.la.foret/2027/overview" target="_blank" rel="noopener noreferrer" class="btn btn--accent">Voir l'édition 2027 sur Betrail</a>
+              <button type="button" class="btn btn--outline" data-lightbox="internet_images/trail-du-chalet.png" data-lightbox-title="Trail du Chalet de la Forêt">Agrandir l'affiche</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVIS CLIENTS -->
+    <section class="section" id="avis">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Ce qu'ils en disent</p>
+          <h2>Avis de nos clients</h2>
+        </div>
+
+        <div class="reviews-bar">
+          <div class="reviews-metric">
+            <span class="reviews-rating" id="reviews-rating">4,2<span>/5</span></span>
+            <div class="reviews-meta">
+              <span class="reviews-stars" aria-label="Note moyenne de 4,2 sur 5">★★★★☆</span>
+              <span class="reviews-count" id="reviews-count">Google</span>
+            </div>
+          </div>
+          <span class="reviews-divider" aria-hidden="true"></span>
+          <div class="reviews-fb">
+            <span class="badge badge--filled">94 % recommandé</span>
+            <span>325 avis vérifiés sur Facebook</span>
+          </div>
+        </div>
+
+        <div id="reviews-list" class="reviews-list" role="list"></div>
+
+        <div class="reviews-more-wrap">
+          <button type="button" id="reviews-toggle" class="btn btn--outline btn--sm" aria-expanded="false">Voir tous les avis</button>
+        </div>
+
+        <div class="reviews-cta">
+          <a href="https://www.facebook.com/chaletdelaforet.be/reviews" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">Lire les avis sur Facebook</a>
+          <a href="https://search.google.com/local/writereview?placeid=ChIJv_ggJ9MqwkcRJ8PIcNUc4vs" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">Laisser un avis sur Google</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -438,7 +547,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-brand__top">
-            <span class="logo-box" style="width:36px;height:36px;"><img src="fb_images/logo.jpg" alt="Logo Le Chalet de la Forêt" width="36" height="36"></span>
+            <span class="logo-box logo-box--sm"><img src="fb_images/logo.jpg" alt="Logo Le Chalet de la Forêt" width="36" height="36"></span>
             <span class="name">Le Chalet de la Forêt</span>
           </div>
           <span class="script">Votre table vous attend</span>
@@ -493,7 +602,7 @@
     <div class="backdrop"></div>
     <button type="button" class="btn-close" aria-label="Fermer la visionneuse">✕</button>
     <div class="stage">
-      <img src="" alt="">
+      <img alt="">
       <p class="caption"></p>
       <p class="hint">Double-clic ou molette pour zoomer · Glissez pour déplacer · Échap pour fermer</p>
     </div>

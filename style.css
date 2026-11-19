@@ -1,7 +1,7 @@
 /* ==========================================================================
    LE CHALET DE LA FORÊT — Feuille de style principale
    Identité : Brasserie & Fumoir Maison · Genappe (Villers-la-Ville)
-   Polices fidèles au site d'origine : Jost (Futura), Nunito Sans (Avenir), Dancing Script
+   Polices : Jost (Futura), Nunito Sans (Avenir), Dancing Script
    ========================================================================== */
 
 :root {
@@ -27,7 +27,7 @@
   --closed-fg:    #9A522B;
   --closed-bg:    rgba(154, 82, 43, 0.12);
 
-  /* Typographie (fidèle à Futura + Avenir + Dancing Script du site d'origine) */
+  /* Typographie */
   --font-display: 'Jost', 'Futura', 'Century Gothic', sans-serif;
   --font-body:    'Nunito Sans', 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-script:  'Dancing Script', cursive;
@@ -67,6 +67,7 @@ body {
 }
 
 body.noscroll { overflow: hidden; }
+[hidden] { display: none !important; }
 
 main {
   padding-top: var(--header-height);
@@ -76,6 +77,7 @@ main {
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
+figure { margin: 0; }
 button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
 button { cursor: pointer; background: none; border: none; padding: 0; }
 address { font-style: normal; }
@@ -109,6 +111,7 @@ address { font-style: normal; }
 }
 
 .section--alt { background-color: var(--bg-alt); }
+.section--centered { text-align: center; }
 
 .section--dark {
   background-color: var(--primary);
@@ -147,6 +150,7 @@ address { font-style: normal; }
   background: currentColor;
   flex-shrink: 0;
 }
+.eyebrow--light { color: #E3AC77; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
@@ -179,6 +183,7 @@ p { margin: 0 0 1rem; }
   margin-left: auto;
   margin-right: auto;
 }
+.lead--spaced { margin-bottom: 2rem; }
 
 /* ---------- Boutons ---------- */
 .btn {
@@ -268,7 +273,6 @@ p { margin: 0 0 1rem; }
 .btn--sm { padding: 0.6rem 1.15rem; font-size: 0.86rem; }
 .btn--full { width: 100%; }
 
-/* Adaptation automatique des boutons dans les sections sombres */
 .section--dark .btn--outline,
 .access-card .btn--outline {
   color: #fff;
@@ -302,7 +306,7 @@ p { margin: 0 0 1rem; }
 .badge--primary { background: var(--primary); color: #fff; }
 .badge--dark    { background: rgba(255, 255, 255, 0.14); color: #F5E6D3; }
 
-/* ---------- Navbar (toujours lisible & fixe) ---------- */
+/* ---------- Navbar ---------- */
 .site-nav {
   position: fixed;
   top: 0;
@@ -352,6 +356,7 @@ p { margin: 0 0 1rem; }
   border: 1px solid var(--border);
   flex-shrink: 0;
 }
+.logo-box--sm { width: 36px; height: 36px; }
 .logo-box img { width: 100%; height: 100%; object-fit: cover; }
 
 .nav-links {
@@ -382,9 +387,7 @@ p { margin: 0 0 1rem; }
   transition: transform var(--t-fast);
 }
 .nav-links a:hover,
-.nav-links a.is-active {
-  color: var(--primary);
-}
+.nav-links a.is-active { color: var(--primary); }
 .nav-links a.is-active { font-weight: 600; }
 .nav-links a:hover::after,
 .nav-links a.is-active::after { transform: scaleX(1); }
@@ -396,7 +399,6 @@ p { margin: 0 0 1rem; }
   flex-shrink: 0;
 }
 
-/* Status Pill (unifié navbar + formulaire) */
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -431,7 +433,6 @@ p { margin: 0 0 1rem; }
   border-color: rgba(154, 82, 43, 0.3);
 }
 
-/* Burger mobile */
 .nav-toggle {
   display: none;
   width: 44px;
@@ -507,7 +508,7 @@ p { margin: 0 0 1rem; }
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
   font-size: 1.5rem;
   display: grid;
@@ -525,7 +526,7 @@ p { margin: 0 0 1rem; }
   font-weight: 500;
   color: #fff;
   padding: 0.9rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: color var(--t-fast), padding-left var(--t-fast);
 }
 .mobile-menu nav a:hover,
@@ -542,7 +543,7 @@ p { margin: 0 0 1rem; }
 }
 .mm-note {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   padding: 0 1.5rem 1.5rem;
   margin: 0;
@@ -579,8 +580,8 @@ p { margin: 0 0 1rem; }
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(16, 31, 24, 0.62) 0%,
-    rgba(16, 31, 24, 0.74) 55%,
+    rgba(16, 31, 24, 0.58) 0%,
+    rgba(16, 31, 24, 0.72) 55%,
     rgba(16, 31, 24, 0.88) 100%
   );
 }
@@ -642,7 +643,7 @@ p { margin: 0 0 1rem; }
   background: var(--accent);
 }
 
-/* ---------- Page Hero (sous-pages : Carte, Suggestions, Événements) ---------- */
+/* ---------- Page Hero ---------- */
 .page-hero {
   position: relative;
   min-height: 290px;
@@ -681,7 +682,7 @@ p { margin: 0 0 1rem; }
 }
 .page-hero__inner .lead { color: rgba(250, 247, 242, 0.9); margin-bottom: 0; }
 
-/* ---------- Grilles & Cartes ---------- */
+/* ---------- Grilles & Médias ---------- */
 .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
 
@@ -692,6 +693,7 @@ p { margin: 0 0 1rem; }
   background: var(--bg-alt);
 }
 .media--radius-l { border-radius: var(--radius-l); }
+.media--radius-m { border-radius: var(--radius-m); }
 .media img {
   width: 100%;
   height: 100%;
@@ -700,25 +702,31 @@ p { margin: 0 0 1rem; }
 }
 .media:hover img { transform: scale(1.03); }
 
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-l);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--t-normal), box-shadow var(--t-normal), border-color var(--t-normal);
+/* ---------- Histoire & Galerie saisonnière ---------- */
+.history-gallery {
+  display: grid;
+  gap: 1rem;
 }
-.card:hover {
-  transform: translateY(-3px);
+.history-photo {
   box-shadow: var(--shadow-md);
-  border-color: rgba(24, 43, 34, 0.25);
+  cursor: zoom-in;
+}
+.history-photo--main { aspect-ratio: 16 / 10; }
+.history-photo--winter { aspect-ratio: 16 / 8; }
+.photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.65rem 1rem;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(16, 31, 24, 0) 0%, rgba(16, 31, 24, 0.78) 100%);
 }
 
-/* ---------- Histoire & Timeline ---------- */
-.history-photo {
-  aspect-ratio: 4 / 3;
-  box-shadow: var(--shadow-md);
-}
 .timeline {
   position: relative;
   padding-left: 2rem;
@@ -794,7 +802,7 @@ p { margin: 0 0 1rem; }
 .fumoir-card p { color: var(--text-light-2); font-size: 0.95rem; margin: 0; }
 .fumoir-cta { margin-top: 2.5rem; text-align: center; }
 
-/* ---------- Aperçu Suggestions (Accueil) & Ardoises (Suggestions) ---------- */
+/* ---------- Suggestions & Ardoises ---------- */
 .suggest-preview {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -851,9 +859,8 @@ p { margin: 0 0 1rem; }
 }
 .suggest-body h3 { margin-bottom: 0.45rem; }
 .suggest-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem; flex: 1; }
-.suggest-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.suggest-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
 
-/* Carte d'ardoise sur suggestions.html */
 .slate-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -978,7 +985,7 @@ p { margin: 0 0 1rem; }
 }
 .access-list li:last-child { border-bottom: none; }
 .access-list svg { width: 18px; height: 18px; color: #D8A06C; flex-shrink: 0; }
-.access-list a { color: rgba(255,255,255,0.92); transition: color var(--t-fast); }
+.access-list a { color: rgba(255, 255, 255, 0.92); transition: color var(--t-fast); }
 .access-list a:hover { color: #E3AC77; text-decoration: underline; }
 .access-perks {
   font-size: 0.88rem;
@@ -1020,6 +1027,8 @@ p { margin: 0 0 1rem; }
   padding: 2.25rem;
   box-shadow: var(--shadow-sm);
 }
+.res-form__status { margin-bottom: 1.35rem; }
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1224,6 +1233,242 @@ p { margin: 0 0 1rem; }
 .res-card p { font-size: 0.93rem; color: var(--text-muted); margin-bottom: 1.1rem; }
 .res-card .tel { color: var(--accent-dark); font-weight: 700; text-decoration: underline; }
 
+/* ---------- Carrousel Abbaye (#abbaye) ---------- */
+.abbey-carousel-wrap {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 16 / 9;
+  background: var(--primary-dark);
+}
+.abbey-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.abbey-carousel-track img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  cursor: zoom-in;
+  transition: opacity 700ms var(--ease);
+}
+.abbey-carousel-track img.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(16, 31, 24, 0.55);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  transition: background-color var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+.carousel-btn svg { width: 20px; height: 20px; }
+.carousel-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.carousel-btn--prev { left: 1rem; }
+.carousel-btn--next { right: 1rem; }
+
+.abbey-carousel-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+}
+.abbey-carousel-nav button {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.32);
+  transition: width var(--t-fast), background-color var(--t-fast);
+}
+.abbey-carousel-nav button.active {
+  width: 28px;
+  background: #fff;
+}
+
+/* ---------- Trail du Chalet (#trail) ---------- */
+.trail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: center;
+}
+.trail-poster {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-l);
+  padding: 1rem;
+  cursor: zoom-in;
+  box-shadow: var(--shadow-lg);
+}
+.trail-poster img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: contain;
+  border-radius: var(--radius-m);
+  margin: 0 auto;
+  transition: transform var(--t-slow);
+}
+.trail-poster:hover img { transform: scale(1.02); }
+.trail-content .lead {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
+}
+.trail-sub {
+  color: rgba(250, 247, 242, 0.72);
+  font-size: 0.96rem;
+  margin-bottom: 1.75rem;
+  max-width: 56ch;
+}
+.trail-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Avis clients (#avis) ---------- */
+.reviews-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: 1.25rem 2rem;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+.reviews-metric {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.reviews-rating {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary);
+}
+.reviews-rating span {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.reviews-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.reviews-stars {
+  color: var(--accent);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+.reviews-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.reviews-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+.reviews-fb {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.review-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 1.45rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.review-author {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+.review-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+.review-text {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.62;
+  margin: 0;
+}
+
+.reviews-more-wrap {
+  text-align: center;
+  margin-top: 2rem;
+}
+.reviews-cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
 /* ---------- Carte Interactive (carte.html) ---------- */
 .menu-toolbar {
   background: var(--surface);
@@ -1245,7 +1490,7 @@ p { margin: 0 0 1rem; }
   position: relative;
   flex: 1;
   min-width: 240px;
-  max-width: 440px;
+  max-width: 460px;
 }
 .search-wrap svg {
   position: absolute;
@@ -1357,6 +1602,24 @@ p { margin: 0 0 1rem; }
   font-size: 0.88rem;
   color: var(--text-muted);
   font-family: var(--font-display);
+}
+
+.drinks-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 1rem 1.35rem;
+  margin-bottom: 1.5rem;
+}
+.drinks-banner p {
+  margin: 0;
+  font-size: 0.93rem;
+  color: var(--text-muted);
 }
 
 .menu-list {
@@ -1701,8 +1964,10 @@ p { margin: 0 0 1rem; }
   .nav-toggle { display: flex; }
 
   .reservation-wrap,
-  .hours-grid { grid-template-columns: 1fr; }
+  .hours-grid,
+  .trail-layout { grid-template-columns: 1fr; }
 
+  .reviews-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1721,13 +1986,22 @@ p { margin: 0 0 1rem; }
   .access-card { padding: 1.5rem; }
 }
 
+@media (max-width: 640px) {
+  .reviews-list { grid-template-columns: 1fr; }
+  .reviews-divider { display: none; }
+  .reviews-fb { align-items: center; text-align: center; }
+  .carousel-btn { width: 38px; height: 38px; }
+}
+
 @media (max-width: 560px) {
   .nav-brand span:last-child { font-size: 1.05rem; }
   .status-pill { display: none; }
   .hero { padding: 3.5rem 1rem 4rem; }
   .hero-actions .btn,
   .menu-actions-top .btn,
-  .empty-state__actions .btn { width: 100%; }
+  .empty-state__actions .btn,
+  .trail-actions .btn,
+  .reviews-cta .btn { width: 100%; }
   .event-card { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .menu-item { grid-template-columns: 1fr; }

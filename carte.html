@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Notre carte — Le Chalet de la Forêt, Genappe</title>
-  <meta name="description" content="Découvrez la carte du Chalet de la Forêt à Genappe : tapas, entrées, salades, plats de brasserie, fumoir maison et desserts faits maison.">
+  <meta name="description" content="Découvrez la carte du Chalet de la Forêt à Genappe : tapas, entrées, salades, plats de brasserie, fumoir maison, desserts faits maison et sugg's liquides.">
   <!-- Retirer cette balise lors de la mise en production finale -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="fb_images/logo.jpg">
@@ -69,7 +69,7 @@
       <div class="page-hero__inner">
         <p class="eyebrow">Cuisine de brasserie &amp; fumoir maison</p>
         <h1>Notre carte</h1>
-        <p class="lead">Tapas à partager, croquettes maison, spécialités fumées sur place, classiques belges et desserts faits maison.</p>
+        <p class="lead">Tapas à partager, croquettes maison, spécialités fumées sur place, classiques belges, desserts faits maison et sugg’s liquides.</p>
       </div>
     </section>
 
@@ -79,19 +79,19 @@
           <div class="menu-toolbar__top">
             <div class="search-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              <label for="menu-search" class="sr-only">Rechercher un plat dans la carte</label>
-              <input type="search" id="menu-search" placeholder="Rechercher un plat (saumon, fumé, croquettes, ribs…)">
+              <label for="menu-search" class="sr-only">Rechercher dans la carte</label>
+              <input type="search" id="menu-search" placeholder="Rechercher un plat ou une boisson (saumon, fumé, ribs, Duvel, Picpoul…)">
             </div>
             <div class="menu-actions-top">
-              <button type="button" class="btn btn--outline btn--sm" data-lightbox="assets/boissons.png" data-lightbox-title="Carte des boissons — Le Chalet de la Forêt">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Carte des boissons
+              <button type="button" class="btn btn--outline btn--sm" data-lightbox="assets/boissons.png" data-lightbox-title="Sugg's Liquides — Le Chalet de la Forêt">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg> Sugg’s liquides (HD)
               </button>
               <a href="suggestions.html" class="btn btn--outline btn--sm">Plats du jour &amp; Suggestions</a>
             </div>
           </div>
 
           <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Catégories de la carte"></div>
-          <div class="diet-filters" id="diet-filters" role="group" aria-label="Filtres diététiques et spécialités"></div>
+          <div class="diet-filters" id="diet-filters" role="group" aria-label="Filtres de la carte"></div>
         </div>
 
         <div class="menu-section-head">
@@ -99,12 +99,17 @@
             <h2 id="category-title">Toute la carte</h2>
             <p class="menu-intro" id="category-intro">Cuisine de brasserie, produits locaux &amp; fumoir maison</p>
           </div>
-          <span class="menu-count" id="menu-count">45 plats</span>
+          <span class="menu-count" id="menu-count">Chargement…</span>
         </div>
 
-        <div id="empty-state" class="empty-state" style="display:none;">
+        <div id="drinks-banner" class="drinks-banner" hidden>
+          <p>François-Alain vous propose ses vins en accord avec les suggestions du chef. Consultez aussi la carte originale des Sugg’s liquides :</p>
+          <button type="button" class="btn btn--outline btn--sm" data-lightbox="assets/boissons.png" data-lightbox-title="Sugg's Liquides — Le Chalet de la Forêt">Ouvrir l’affiche (HD)</button>
+        </div>
+
+        <div id="empty-state" class="empty-state" hidden>
           <div class="empty-state__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
-          <h3>Aucun plat ne correspond à ces critères</h3>
+          <h3>Aucun résultat ne correspond à ces critères</h3>
           <p>Essayez un autre mot-clé ou réinitialisez les filtres sélectionnés.</p>
           <div class="empty-state__actions">
             <button type="button" id="reset-menu-filters" class="btn btn--primary btn--sm">Réinitialiser les filtres</button>
@@ -115,11 +120,11 @@
       </div>
     </section>
 
-    <section class="section section--dark" style="text-align:center;">
+    <section class="section section--dark section--centered">
       <div class="container">
         <p class="eyebrow">Envie de passer à table ?</p>
         <h2>Réservez votre table au Chalet</h2>
-        <p class="lead" style="margin-bottom:2rem;">Une question sur un allergène ou un plat du jour ? Notre équipe vous répond volontiers par téléphone.</p>
+        <p class="lead lead--spaced">Une question sur un allergène ou un plat du jour ? Notre équipe vous répond volontiers par téléphone.</p>
         <div class="hero-actions">
           <a href="index.html#reserver" class="btn btn--accent">Réserver en ligne</a>
           <a href="tel:+3271813874" class="btn btn--outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 071/81.38.74</a>
@@ -133,7 +138,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-brand__top">
-            <span class="logo-box" style="width:36px;height:36px;"><img src="fb_images/logo.jpg" alt="Logo Le Chalet de la Forêt" width="36" height="36"></span>
+            <span class="logo-box logo-box--sm"><img src="fb_images/logo.jpg" alt="Logo Le Chalet de la Forêt" width="36" height="36"></span>
             <span class="name">Le Chalet de la Forêt</span>
           </div>
           <span class="script">Votre table vous attend</span>
@@ -188,7 +193,7 @@
     <div class="backdrop"></div>
     <button type="button" class="btn-close" aria-label="Fermer la visionneuse">✕</button>
     <div class="stage">
-      <img src="" alt="">
+      <img alt="">
       <p class="caption"></p>
       <p class="hint">Double-clic ou molette pour zoomer · Glissez pour déplacer · Échap pour fermer</p>
     </div>
