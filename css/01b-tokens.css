@@ -1,0 +1,50 @@
+/* ==========================================================================
+   LE CHALET DE LA FORÊT — Tokens suite (badges, filets, médias, overlay)
+   ========================================================================== */
+/* ---------- Badges & filets ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 0.4em;
+  font-family: var(--font-display); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; border-radius: 20px;
+  padding: 0.28em 0.75em; line-height: 1;
+}
+.badge--filled { background: var(--color-accent); color: #fff; }
+.badge--soft { background: rgba(182, 122, 69, 0.10); color: #8a5a32; }
+.badge--sage { background: rgba(74, 99, 85, 0.12); color: #3a5045; }
+.badge--primary { background: var(--color-primary); color: #fff; }
+
+.filet {
+  width: 100%; height: 1px; background: var(--color-border);
+  border: none; margin: var(--space-l) 0;
+}
+.filet--accent {
+  background: var(--color-accent); height: 2px; width: 60px; margin: 0 auto;
+}
+
+/* ---------- Image wrappers ---------- */
+.media {
+  position: relative; overflow: hidden; border-radius: var(--radius-m);
+  background: #e8e2d6;
+}
+.media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 700ms ease-out;
+}
+.media:hover img { transform: scale(1.03); }
+.media--radius-l { border-radius: var(--radius-l); }
+
+/* ---------- Overlay sombre sur image (lisibilité texte) ---------- */
+.overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(24, 43, 34, 0.25) 0%,
+    rgba(24, 43, 34, 0.55) 55%,
+    rgba(24, 43, 34, 0.75) 100%);
+}
+
+/* ---------- Réduction de mouvement ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .media img { transition: none; }
+  html { scroll-behavior: auto; }
+}

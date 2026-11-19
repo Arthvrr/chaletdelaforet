@@ -1,0 +1,67 @@
+/* ==========================================================================
+   LE CHALET DE LA FORÊT — Formulaire de réservation (#reserver)
+   ========================================================================== */
+.reservation-hero {
+  background: var(--color-primary); color: #fff;
+  border-radius: var(--radius-l); padding: var(--space-xl) var(--space-m);
+  text-align: center; margin-bottom: var(--space-xl);
+  position: relative; overflow: hidden;
+}
+.reservation-hero h2 { color: #fff; margin-bottom: 0.75rem; }
+.reservation-hero p { color: rgba(255,255,255,0.85); max-width: 60ch; margin: 0 auto var(--space-l) auto; }
+
+.reservation-wrap {
+  display: grid; gap: var(--space-l);
+}
+@media (min-width: 900px) {
+  .reservation-wrap { grid-template-columns: 1fr 420px; gap: var(--space-xl); }
+}
+
+.res-form { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-l); padding: var(--space-l) var(--space-m); }
+.res-form .form-group { margin-bottom: 1.25rem; }
+.res-form label {
+  display: block; font-family: var(--font-display); font-weight: 600; font-size: 0.88rem;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text-2);
+  margin-bottom: 0.5rem;
+}
+.res-form label .req { color: var(--color-accent); }
+.res-form input, .res-form select, .res-form textarea {
+  width: 100%; border: 1px solid var(--color-border); border-radius: var(--radius-s);
+  background: #fff; color: var(--color-text);
+  padding: 0.75rem 0.9rem; font-size: 1rem; font-variant-numeric: tabular-nums;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+  font-family: var(--font-body);
+}
+.res-form input:focus, .res-form select:focus, .res-form textarea:focus {
+  border-color: var(--color-accent); outline: none; box-shadow: 0 0 0 4px rgba(182,122,69,0.15);
+}
+.res-form textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+.res-form .field-note { font-size: 0.8rem; color: var(--color-text-2); margin-top: 0.35rem; }
+
+/* Service segmented control */
+.segmented { display: flex; gap: 0.4rem; border: 1px solid var(--color-border); border-radius: var(--radius-s); background: #fff; padding: 4px; }
+.segmented button {
+  flex: 1; padding: 0.6rem 0.5rem; font-family: var(--font-display); font-weight: 600;
+  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--color-text-2); border-radius: var(--radius-s); border: 1px solid transparent;
+  transition: all 250ms ease;
+}
+.segmented button.active { background: var(--color-primary); color: #fff; }
+.segmented button:not(.active):hover { background: rgba(24,43,34,0.06); }
+
+/* Slots grid */
+.slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 0.5rem; margin-top: 0.5rem; }
+.slots button {
+  padding: 0.55rem 0.5rem; font-family: var(--font-display); font-weight: 600;
+  font-size: 0.85rem; color: var(--color-text); border-radius: var(--radius-s);
+  border: 1px solid var(--color-border); background: #fff;
+  transition: all 200ms ease;
+}
+.slots button:hover { border-color: var(--color-accent); background: rgba(182,122,69,0.08); }
+.slots button.active-slot { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+
+/* Compteur personnes */
+.counter { display: flex; align-items: center; gap: 0.6rem; border: 1px solid var(--color-border); border-radius: var(--radius-s); background: #fff; padding: 0.35rem; }
+.counter button { width: 34px; height: 34px; border-radius: 6px; border: 1px solid var(--color-border); background: #f6f2eb; color: var(--color-primary); font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; transition: background 200ms ease; }
+.counter button:hover { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+.counter .value { font-family: var(--font-display); font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.1rem; min-width: 28px; text-align: center; color: var(--color-text); }

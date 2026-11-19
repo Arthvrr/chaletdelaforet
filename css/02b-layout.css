@@ -1,0 +1,103 @@
+/* ==========================================================================
+   LE CHALET DE LA FORÊT — Menu rideau mobile, Hero, grilles, cartes
+   ========================================================================== */
+/* ---------- Mobile curtain menu ---------- */
+.mobile-menu {
+  position: fixed; inset: 0 0 100% 0;
+  background: var(--color-primary);
+  color: #fff; z-index: 900;
+  display: flex; flex-direction: column;
+  transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+.mobile-menu.is-open { transform: translateY(100vh); }
+.mobile-menu .mm-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem var(--space-m); border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.mobile-menu .mm-brand { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: #fff; letter-spacing: -0.02em; }
+.mobile-menu .mm-close {
+  width: 44px; height: 44px; display: grid; place-items: center; color: #fff;
+}
+.mobile-menu nav { padding: 2rem var(--space-m); flex: 1; overflow-y: auto; }
+.mobile-menu nav a {
+  display: block; font-family: var(--font-display); font-size: 1.35rem; font-weight: 600;
+  color: #fff; padding: 0.95rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  letter-spacing: -0.01em; transition: color 250ms ease;
+}
+.mobile-menu nav a:hover { color: var(--color-accent); padding-left: 0.5rem; }
+.mm-actions { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem var(--space-m); border-top: 1px solid rgba(255,255,255,0.08); }
+.mm-actions .btn--primary { width: 100%; }
+.mm-actions a { text-align: center; }
+.mm-note { font-size: 0.85rem; color: rgba(255,255,255,0.55); text-align: center; margin-top: auto; padding-bottom: 1.5rem; }
+
+/* ---------- Overlay (scroll lock) ---------- */
+body.noscroll { overflow: hidden; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; height: 100svh; min-height: 600px;
+  display: grid; place-items: center;
+  background: #101812;
+  overflow: hidden;
+}
+.hero .media { position: absolute; inset: 0; z-index: 1; }
+.hero .media img { height: 100%; width: 100%; object-fit: cover; object-position: center; }
+.hero .overlay { z-index: 2; }
+.hero .content {
+  position: relative; z-index: 10;
+  width: 100%; max-width: var(--max-width); padding: 0 var(--space-m);
+  display: grid; grid-template-columns: 1fr; gap: 0;
+  text-align: center; align-items: center; height: 100%;
+}
+.hero .eyebrow { text-align: center; margin: 0 auto 1rem auto; }
+.hero h1 { color: #fff; margin-bottom: 1.25rem; }
+.hero .lead { color: rgba(255,255,255,0.9); max-width: 52ch; margin: 0 auto var(--space-l) auto; }
+.hero-actions { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+.hero-reassurance {
+  position: absolute; z-index: 10; bottom: 4vh; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center;
+  font-family: var(--font-display); font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.85);
+}
+.hero-reassurance .chip {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.42rem 0.95rem; border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 20px; background: rgba(24, 43, 34, 0.35);
+}
+.hero-reassurance .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }
+
+/* ---------- Grilles éditoriales ---------- */
+.grid-2 { display: grid; gap: var(--space-l); align-items: center; }
+.grid-3 { display: grid; gap: var(--space-l); }
+@media (min-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Section sombre (fumoir) ---------- */
+.section--dark { background: var(--color-primary); color: #fff; }
+.section--dark h2, .section--dark h3 { color: #fff; }
+.section--dark p { color: rgba(255,255,255,0.85); }
+.section--dark .lead { color: rgba(255,255,255,0.8); }
+
+/* ---------- Card générique ---------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  padding: var(--space-m);
+  transition: transform 350ms ease, border-color 350ms ease, box-shadow 350ms ease;
+}
+.card:hover { transform: translateY(-3px); border-color: rgba(24, 43, 34, 0.35); box-shadow: var(--shadow); }
+
+/* ---------- Skip link (accessibilité) ---------- */
+.skip-link {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px;
+  overflow: hidden; z-index: 9999;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem; width: auto; height: auto; padding: 0.6rem 1rem;
+  background: var(--color-accent); color: #fff; font-family: var(--font-display);
+  font-weight: 700; border-radius: var(--radius-s);
+}

@@ -1,0 +1,51 @@
+/* ==========================================================================
+   LE CHALET DE LA FORÊT — Réservation suite (alertes, confirmation, latérale)
+   ========================================================================== */
+/* Alerte 48h */
+.alert-48h {
+  display: none;
+  background: #fdf3e7;
+  border: 1px solid rgba(182,122,69,0.35);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-m);
+  padding: 1rem 1.25rem; margin-bottom: 1.25rem;
+}
+.alert-48h .alert-title { font-family: var(--font-display); font-weight: 700; color: #8a5a32; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.alert-48h p { color: #7a522e; font-size: 0.9rem; line-height: 1.5; margin: 0; }
+.alert-48h .tel { color: var(--color-primary); font-weight: 700; text-decoration: underline; }
+
+/* Spams / confirmation */
+.spam-note {
+  font-size: 0.82rem; color: var(--color-text-2);
+  background: var(--color-bg); border-radius: var(--radius-s);
+  padding: 0.75rem 1rem; margin-bottom: 1rem;
+  border-left: 3px solid var(--color-accent);
+}
+.spam-note strong { color: var(--color-text); }
+
+/* État confirmation */
+.confirm-state { display: none; text-align: center; padding: var(--space-l) 0; }
+.confirm-state .confirm-icon {
+  width: 64px; height: 64px; border-radius: 50%; background: rgba(47,107,74,0.12);
+  color: #2f6b4a; display: grid; place-items: center; font-size: 28px;
+  margin: 0 auto 1.25rem auto; border: 2px solid #2f6b4a;
+}
+.confirm-state h3 { color: var(--color-primary); margin-bottom: 0.5rem; }
+.confirm-state p { color: var(--color-text-2); margin-bottom: 1.5rem; }
+.confirm-recap { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-m); padding: 1.25rem; text-align: left; margin: 0 auto var(--space-l) auto; max-width: 420px; }
+.confirm-recap dt { font-family: var(--font-display); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-2); margin-bottom: 0.25rem; }
+.confirm-recap dd { font-variant-numeric: tabular-nums; color: var(--color-text); margin: 0 0 0.75rem 0; font-weight: 600; }
+.confirm-recap dd:last-child { margin-bottom: 0; }
+
+/* Barre latérale réservation */
+.res-sidebar { display: flex; flex-direction: column; gap: var(--space-m); }
+.res-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-m); padding: var(--space-m); }
+.res-card h4 { font-size: 1rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+.res-card p { font-size: 0.92rem; color: var(--color-text-2); margin: 0 0 0.75rem 0; line-height: 1.55; }
+.res-card .tel { color: var(--color-accent); font-weight: 700; text-decoration: underline; }
+.res-card .btn { width: 100%; margin-top: 0.5rem; }
+
+/* Bouton envoi */
+.btn[type="submit"], .btn-submit {
+  width: 100%; padding: 1rem 0; font-size: 1.05rem;
+}

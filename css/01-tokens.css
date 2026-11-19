@@ -1,0 +1,121 @@
+/* ==========================================================================
+   LE CHALET DE LA FORÊT — Système de design (tokens, reset, typographie)
+   Direction artistique : Editorial Heritage Brasserie
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---------- Palette : Forêt, Pierre d'Abbaye & Braise de Fumoir ---------- */
+  --color-bg:          #F6F2EB;
+  --color-surface:     #FDFBF7;
+  --color-primary:     #182B22;
+  --color-accent:      #B67A45;
+  --color-accent-2:    #4A6355;
+  --color-text:        #1C1B19;
+  --color-text-2:      #5E5A53;
+  --color-border:      rgba(24, 43, 34, 0.12);
+  --color-inverse:     #FFFFFF;
+
+  /* ---------- Typographie (conservation police site actuel) ---------- */
+  --font-display:  'futura-lt-w01-book', 'Montserrat', 'Futura', 'Century Gothic', 'Avenir', sans-serif;
+  --font-body:     'avenir-lt-w01_35-light1475496', 'Montserrat', 'Avenir', 'Helvetica', 'sans-serif';
+  --font-script:   'dancingscript-regular', 'Dancing Script', 'cursive';
+
+  /* ---------- Espacements & dimensions ---------- */
+  --space-xs:  0.5rem;
+  --space-s:   1rem;
+  --space-m:   1.5rem;
+  --space-l:   2.5rem;
+  --space-xl:  4rem;
+  --radius-s:  4px;
+  --radius-m:  8px;
+  --radius-l:  12px;
+  --shadow:    0 10px 30px -10px rgba(24, 43, 34, 0.10);
+  --shadow-xl: 0 20px 50px -15px rgba(24, 43, 34, 0.16);
+  --transition: 400ms ease-out;
+  --max-width: 1180px;
+  --header-height: 80px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  margin: 0; padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; padding: 0; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); border: 0; white-space: nowrap;
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-m); }
+.section { padding: var(--space-xl) 0; }
+.section-header { margin-bottom: var(--space-l); text-align: center; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+.eyebrow::before {
+  content: ""; display: inline-block; width: 14px; height: 1px;
+  background: var(--color-accent); flex-shrink: 0;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display); font-weight: 600;
+  color: var(--color-primary); line-height: 1.12; letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2.6rem, 6vw, 5.2rem); letter-spacing: -0.03em; margin: 0 0 var(--space-m) 0; }
+h2 { font-size: clamp(1.9rem, 4vw, 3.2rem); margin: 0 0 var(--space-m) 0; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); margin: 0 0 var(--space-s) 0; }
+
+p { margin: 0 0 1rem 0; }
+.lead {
+  font-size: 1.15rem; line-height: 1.7; color: var(--color-text-2);
+  max-width: 65ch; margin-left: auto; margin-right: auto;
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+  font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+  letter-spacing: -0.01em; border-radius: var(--radius-s);
+  padding: 0.95rem 1.75rem; border: 1px solid transparent;
+  transition: transform var(--transition), box-shadow var(--transition),
+              background-color var(--transition), border-color var(--transition), color var(--transition);
+  text-align: center; line-height: 1;
+}
+.btn--primary { background: var(--color-primary); color: var(--color-inverse);
+  box-shadow: 0 8px 24px -8px rgba(24, 43, 34, 0.35); }
+.btn--primary:hover { transform: translateY(-1px);
+  box-shadow: 0 14px 32px -10px rgba(24, 43, 34, 0.45); background: #10231b; }
+.btn--outline { background: transparent; border-color: var(--color-primary); color: var(--color-primary); }
+.btn--outline:hover { background: var(--color-primary); color: var(--color-inverse); }
+.btn--accent { background: var(--color-accent); color: var(--color-inverse); }
+.btn--accent:hover { background: #9e6638; transform: translateY(-1px); }
+.btn--ghost { background: transparent; color: var(--color-text-2); border-color: transparent;
+  padding: 0.55rem 0; font-size: 0.95rem; font-weight: 500; }
+.btn--ghost:hover { color: var(--color-accent); }
+.btn:active { transform: scale(0.98); }
+.btn--full { width: 100%; }

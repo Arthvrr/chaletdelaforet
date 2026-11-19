@@ -1,0 +1,79 @@
+/* ==========================================================================
+   LE CHALET DE LA FORÊT — Carte (hero, recherche, filtres, plats, vide)
+   ========================================================================== */
+.menu-hero {
+  position: relative; border-radius: var(--radius-l); overflow: hidden;
+  border: 1px solid var(--color-border); margin-bottom: var(--space-xl);
+  height: 340px; display: grid; place-items: center; background: #e8e2d6;
+}
+.menu-hero .overlay { z-index: 2; }
+.menu-hero .text { position: relative; z-index: 10; padding: 0 var(--space-m); text-align: center; color: #fff; }
+.menu-hero .text h1 { color: #fff; }
+.menu-hero .text .lead { color: rgba(255,255,255,0.9); }
+.menu-actions-top { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-l); }
+
+.search-wrap { position: relative; max-width: 360px; margin: 0 auto var(--space-xl) auto; }
+.search-wrap input {
+  width: 100%; padding: 0.85rem 1rem 0.85rem 2.8rem; border: 1px solid var(--color-border);
+  border-radius: 34px; background: #fff; color: var(--color-text);
+  font-family: var(--font-body); font-size: 0.95rem;
+}
+.search-wrap::before {
+  content: "🔍"; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+  font-size: 1.1rem; pointer-events: none;
+}
+
+.menu-controls { display: flex; flex-direction: column; gap: 1rem; align-items: center; margin-bottom: var(--space-xl); }
+.category-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; width: 100%; position: sticky; top: var(--header-height); z-index: 40; background: var(--color-surface); box-shadow: 0 4px 6px -4px rgba(24,43,34,0.10); }
+.category-tabs button {
+  padding: 0.55rem 1rem; border-radius: 20px; border: 1px solid transparent;
+  background: transparent; color: var(--color-text-2);
+  font-family: var(--font-display); font-weight: 600; font-size: 0.88rem;
+  text-transform: uppercase; letter-spacing: 0.04em; transition: all 250ms ease;
+  cursor: pointer;
+}
+.category-tabs button.active {
+  background: var(--color-primary); color: #fff; border-color: var(--color-primary);
+}
+.category-tabs button:not(.active):hover { background: rgba(24,43,34,0.06); color: var(--color-primary); }
+
+.diet-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.diet-filters button {
+  padding: 0.45rem 0.95rem; border-radius: 20px; border: 1px solid var(--color-border);
+  background: #fff; color: var(--color-text-2);
+  font-family: var(--font-display); font-weight: 600; font-size: 0.82rem;
+  text-transform: uppercase; letter-spacing: 0.05em; transition: all 250ms ease;
+  cursor: pointer;
+}
+.diet-filters button.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+.diet-filters button:not(.active):hover { border-color: var(--color-accent); color: var(--color-accent); background: rgba(182,122,69,0.08); }
+
+.menu-list { display: grid; gap: 1.6rem; }
+@media (min-width: 900px) { .menu-list { grid-template-columns: 1fr 1fr; } }
+.menu-item {
+  border: 1px solid var(--color-border); border-radius: var(--radius-m);
+  padding: var(--space-m); background: var(--color-surface);
+  transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+  display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+}
+.menu-item:hover { border-color: rgba(24,43,34,0.35); transform: translateY(-2px); box-shadow: var(--shadow); }
+.menu-item--signature { border-color: var(--color-accent); background: #fdfaf2; }
+.menu-item--signature:hover { border-color: var(--color-accent); box-shadow: 0 10px 30px rgba(182,122,69,0.18); }
+.menu-item-content h3 {
+  font-size: 1.1rem; color: var(--color-primary); margin: 0 0 0.4rem 0;
+  font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em;
+}
+.menu-item-tags { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.menu-item-desc { color: var(--color-text-2); font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.8rem 0; }
+.menu-item-prices { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.menu-item-price {
+  font-variant-numeric: tabular-nums; font-family: var(--font-display);
+  font-weight: 700; color: var(--color-text);
+}
+.menu-item-price .label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-2); font-family: var(--font-display); }
+.menu-item-price .val { font-size: 1.15rem; }
+
+.empty-state { text-align: center; padding: var(--space-xl) 0; }
+.empty-state .empty-icon { font-size: 48px; margin-bottom: 1rem; display: block; opacity: 0.45; }
+.empty-state h3 { color: var(--color-primary); margin-bottom: 0.5rem; }
+.empty-state p { color: var(--color-text-2); max-width: 42ch; margin: 0 auto var(--space-l) auto; }

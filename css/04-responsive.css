@@ -1,0 +1,57 @@
+/* ==========================================================================
+   LE CHALET DE LA FORÊT — Responsive (mobile-first adjustments)
+   ========================================================================== */
+
+/* ---------- Tablette & desktop : navbar ---------- */
+@media (min-width: 900px) {
+  .nav-toggle { display: none !important; }
+  .mobile-menu { position: static !important; transform: none !important; display: none; }
+  body.noscroll { overflow: revert; }
+}
+
+/* ---------- Mobile : navbar ---------- */
+@media (max-width: 899px) {
+  .nav-links { position: fixed; inset: 0 auto 0 0; width: 100%; } /* géré par JS curtain */
+  .site-nav.scrolled .nav-links a { color: var(--color-text); }
+  .nav-brand { font-size: 1.15rem; }
+  .nav-brand .visually-label { display: none; }
+  .nav-brand img { width: 34px; height: 34px; }
+  .nav-toggle { display: flex; }
+  .nav-cta { margin-left: 0.6rem; padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+}
+
+/* ---------- Hero mobile ---------- */
+@media (max-width: 899px) {
+  .hero { min-height: 520px; }
+  .hero h1 { font-size: clamp(2.2rem, 9vw, 3.6rem); }
+  .hero .lead { font-size: 1rem; padding: 0 1rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions .btn { width: 100%; max-width: 280px; justify-content: center; }
+  .hero-reassurance { bottom: 3vh; gap: 0.9rem; font-size: 0.75rem; }
+  .hero-reassurance .chip { padding: 0.35rem 0.7rem; }
+}
+
+/* ---------- Grilles mobile ---------- */
+@media (max-width: 899px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .fumoir-grid { grid-template-columns: 1fr; }
+  .suggest-preview { grid-template-columns: 1fr; }
+  .hours-grid { grid-template-columns: 1fr; }
+  .menu-list { grid-template-columns: 1fr; }
+  .events-list { grid-template-columns: 1fr; }
+  .menu-item { grid-template-columns: 1fr; }
+  .menu-item-prices { align-items: start; text-align: left; }
+  .event-card { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .reservation-wrap { grid-template-columns: 1fr; }
+}
+
+/* ---------- Petit mobile ---------- */
+@media (max-width: 480px) {
+  .container { padding: 0 1rem; }
+  .section { padding: 2.6rem 0; }
+  .hero { min-height: 480px; }
+  .menu-item { padding: 1rem; }
+  .res-form { padding: 1rem; }
+  .access-card { padding: 1.25rem 1rem; }
+}
